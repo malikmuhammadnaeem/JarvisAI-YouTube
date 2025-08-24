@@ -70,7 +70,7 @@ def takeCommand():
             return "Some Error Occurred. Sorry from Jarvis"
 
 if __name__ == '__main__':
-    print('Welcome to Jarvis A.I')
+    print('As-salamu alaykum')
     say("Jarvis A.I")
     while True:
         print("Listening...")
@@ -91,12 +91,6 @@ if __name__ == '__main__':
             hour = datetime.datetime.now().strftime("%H")
             min = datetime.datetime.now().strftime("%M")
             say(f"Sir time is {hour} bajke {min} minutes")
-
-        elif "open facetime".lower() in query.lower():
-            os.system(f"open /System/Applications/FaceTime.app")
-
-        elif "open pass".lower() in query.lower():
-            os.system(f"open /Applications/Passky.app")
 
         elif "Using artificial intelligence".lower() in query.lower():
             ai(prompt=query)
