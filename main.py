@@ -63,20 +63,20 @@ def takeCommand():
         audio = r.listen(source)
         try:
             print("Recognizing...")
-            query = r.recognize_google(audio, language="en-in")
+            query = r.recognize_google(audio, language="en-ur")
             print(f"User said: {query}")
             return query
         except Exception as e:
             return "Some Error Occurred. Sorry from Jarvis"
 
 if __name__ == '__main__':
-    print('Welcome to Jarvis A.I')
+    print('As-salamu alaykum Ahmad ')
     say("Jarvis A.I")
     while True:
         print("Listening...")
         query = takeCommand()
         # todo: Add more sites
-        sites = [["youtube", "https://www.youtube.com"], ["wikipedia", "https://www.wikipedia.com"], ["google", "https://www.google.com"],]
+        sites = [["youtube", "https://www.youtube.com"], ["wikipedia", "https://www.wikipedia.com"], ["google", "https://www.google.com"], ["github", "https://www.github.com"]]
         for site in sites:
             if f"Open {site[0]}".lower() in query.lower():
                 say(f"Opening {site[0]} sir...")
@@ -91,12 +91,6 @@ if __name__ == '__main__':
             hour = datetime.datetime.now().strftime("%H")
             min = datetime.datetime.now().strftime("%M")
             say(f"Sir time is {hour} bajke {min} minutes")
-
-        elif "open facetime".lower() in query.lower():
-            os.system(f"open /System/Applications/FaceTime.app")
-
-        elif "open pass".lower() in query.lower():
-            os.system(f"open /Applications/Passky.app")
 
         elif "Using artificial intelligence".lower() in query.lower():
             ai(prompt=query)
